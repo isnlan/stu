@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edb628a-6719-4380-8586-a06b5db75dad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bdf3a42-ac30-44a8-8dd7-de73c415da0f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bdf3a42-ac30-44a8-8dd7-de73c415da0f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
@@ -181,26 +179,34 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="311" y="58" width="800" height="677" key="#GOROOT/67.27.1299.741@67.27.1299.741" timestamp="1578967255892" />
-    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1578969308065">
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1578971869040">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1578969308065" />
-    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1578969308062">
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1578971869040" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1578971869039">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1578969308062" />
-    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1578969308061">
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1578971869039" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1578971869039">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1578969308061" />
-    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1578969308064">
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1578971869039" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1578971869040">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1578969308064" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1578971869040" />
     <state x="205" y="31" key="SettingsEditor" timestamp="1578969401399">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1578969401399" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1578970967531">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1578970967531" />
+    <state x="495" y="88" width="432" height="617" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578971816290">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="495" y="88" width="432" height="617" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1299.741@67.27.1299.741" timestamp="1578971816290" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
