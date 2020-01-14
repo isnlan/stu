@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "/kvdb";
+
+message SetKV {
+    string key = 1;
+    string value = 2;
+}
+
+message Empty {}
+
+service KvDB {
+    rpc Set (SetKV) returns (Empty);
+}

@@ -1,0 +1,65 @@
+/*
+Copyright IBM Corp. 2016 All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+		 http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+syntax = "proto3";
+
+option go_package = "github.com/hyperledger/fabric/protos/peer";
+option java_package = "org.hyperledger.fabric.protos.peer";
+option java_outer_classname = "ProposalPackage";
+
+package protos;
+
+
+// A Proposal is sent to an endorser for endorsement.  The proposal contains:
+// 1. A header which should be unmarshaled to a Header message.  Note that
+//    Header is both the header of a Proposal and of a Transaction, in that i)
+//    both headers should be unmarshaled to this message; and ii) it is used to
+//    compute cryptographic hashes and signatures.  The header has fields common
+//    to all proposals/transactions.  In addition it has a type field for
+//    additional customization. An example of this is the ChaincodeHeaderExtension
+//    message used to extend the Header for type CHAINCODE.
+// 2. A payload whose type depends on the header's type field.
+// 3. An extension whose type depends on the header's type field.
+//
+// Let us see an example. For type CHAINCODE (see the Header message),
+// we have the following:
+// 1. The header is a Header message whose extensions field is a
+//    ChaincodeHeaderExtension message.
+// 2. The payload is a ChaincodeProposalPayload message.
+// 3. The extension is a ChaincodeAction that might be used to ask the
+//    endorsers to endorse a specific ChaincodeAction, thus emulating the
+//    submitting peer model.
+message ProposalCustomer {
+
+	// The header of the proposal. It is the bytes of the Header
+	bytes header = 1;
+
+	// The payload of the proposal as defined by the type in the proposal
+	// header.
+	bytes payload = 2;
+
+	// Optional extensions to the proposal. Its content depends on the Header's
+	// type field.  For the type CHAINCODE, it might be the bytes of a
+	// ChaincodeAction message.
+	bytes extension = 3;
+
+	// invoke is true mean invoke, invoke is false mean query
+	bool invoke = 4;
+
+	// Those nodes must be executed
+	repeated string nodes = 5;
+}
+
