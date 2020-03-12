@@ -1,26 +1,23 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
+	"github.com/pkg/errors"
 )
 
-func main() {
-	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
-	router.NoRoute(HandleNotFound)
-	router.NoMethod(HandleNotFound)
-	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+func f1() error {
+	return errors.New("f1 error")
 }
 
-func HandleNotFound(c *gin.Context) {
-	c.JSON(404, gin.H{
-		"message": "404 page not found",
-		"app":     "blockchain-api",
-		"request": c.Request.Method + " " + c.Request.URL.String(),
-	})
+func f2() error {
+	err := f1()
+	return errors.WithMessage(err, "f2 error")
+}
+
+func main()  {
+	err := f2()
+
+	fmt.Println(errors.WithStack(err))
+	fmt.Println(errors.Cause(err))
+	fmt.Println(errors.Wrap(err, "wrap error"))
 }
