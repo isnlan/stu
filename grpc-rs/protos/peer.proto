@@ -1,0 +1,21 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+import "message.proto";
+
+// process message from client
+service Endorser {
+    rpc ProcessProposal(SignedProposal) returns (ProposalResponse) {}
+    rpc Ping(Empty) returns (Empty) {}
+}
+
+// send and receive message to component
+service Component {
+    rpc Register (stream Message) returns (stream Message) {}
+}
+
+// send and receive message to other peer nodes
+service P2P {
+    rpc Connect (stream Message) returns (stream Message) {}
+}

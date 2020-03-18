@@ -8,6 +8,7 @@ import (
 	"stu/grpc-banchmark/helloworld"
 )
 
+//go:generate ghz --insecure --call helloworld.Greeter.SayHello -d '{"name":"Bob"}' --proto helloworld.proto -n 200000 -c 40 0.0.0.0:50051
 func main()  {
 	report, err := runner.Run(
 		"helloworld.Greeter.SayHello",
