@@ -6,7 +6,7 @@ import "message.proto";
 
 // process message from client
 service Endorser {
-    rpc ProcessProposal(SignedProposal) returns (ProposalResponse) {}
+    rpc ProcessProposal(BatchSubmit) returns (BatchResponse) {}
     rpc Ping(Empty) returns (Empty) {}
 }
 
@@ -17,5 +17,5 @@ service Component {
 
 // send and receive message to other peer nodes
 service P2P {
-    rpc Connect (stream Message) returns (stream Message) {}
+    rpc Broadcast (stream Message) returns (stream Message) {}
 }

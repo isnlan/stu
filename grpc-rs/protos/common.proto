@@ -58,6 +58,10 @@ message SignedProposal {
     Proposal proposal = 1;
     bytes signature = 2;
 }
+
+message BatchSubmit {
+    repeated SignedProposal signed_proposal_list = 1;
+}
 // ------------------------------- contract.proto1 call -------------------------------
 
 message Envelope {
@@ -76,6 +80,10 @@ message ProposalResponse {
 
     // A payload that can be used to include metadata with this response.
     bytes payload = 3;
+}
+
+message BatchResponse {
+    repeated ProposalResponse proposal_response_list = 1;
 }
 
 //--------------------------------
