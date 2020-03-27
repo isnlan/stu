@@ -4,16 +4,6 @@
     <list default="true" id="3edb628a-6719-4380-8586-a06b5db75dad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-rs/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-rs/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/block.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/block.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/common.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/common.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/consensus.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/consensus.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/message.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/message.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/peer.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/peer.proto" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="$PROJECT_DIR$/../../../go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -149,10 +139,10 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build stu" />
-      <item itemvalue="Go Build.go build stu/schema" />
-      <item itemvalue="Go Build.go build stu/grpc-test" />
       <item itemvalue="Go Build.go build stu/grpc-banchmark" />
       <item itemvalue="Go Build.go build stu/grpc-rs" />
+      <item itemvalue="Go Build.go build stu/grpc-test" />
+      <item itemvalue="Go Build.go build stu/schema" />
       <item itemvalue="Go Remote.Unnamed" />
     </list>
     <recent_temporary>
@@ -189,10 +179,10 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="990" y="509" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576138314870">
-      <screen x="0" y="23" width="2560" height="1353" />
+    <state x="311" y="58" width="800" height="677" key="#GOROOT" timestamp="1584702224773">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="990" y="509" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1353@0.23.2560.1353" timestamp="1576138314870" />
+    <state x="311" y="58" width="800" height="677" key="#GOROOT/67.27.1299.741@67.27.1299.741" timestamp="1584702224773" />
     <state width="466" height="466" key="DebuggerActiveHint" timestamp="1583393085993">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
@@ -246,10 +236,11 @@
     </state>
     <state width="1280" height="720" key="XDebugger.FullValuePopup/0.0.2560.1440@0.0.2560.1440" timestamp="1582073967170" />
     <state width="1280" height="677" key="XDebugger.FullValuePopup/0.23.2560.1353@0.23.2560.1353" timestamp="1583393278708" />
-    <state x="957" y="552" key="com.intellij.ide.util.TipDialog" timestamp="1582509282683">
-      <screen x="0" y="23" width="2560" height="1353" />
+    <state x="553" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1584855651222">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="957" y="552" key="com.intellij.ide.util.TipDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1582509282683" />
+    <state x="553" y="317" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1584855651222" />
     <state x="938" y="456" width="683" height="486" key="find.popup" timestamp="1584497842476">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
@@ -317,6 +308,11 @@
           <url>file:///usr/local/go/src/encoding/json/decode.go</url>
           <line>887</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/grpc-rs/main.go</url>
+          <line>58</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
