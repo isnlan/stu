@@ -6,10 +6,14 @@
       <change afterPath="$PROJECT_DIR$/jsrpc/client/main.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/jsrpc/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/grpc-rs/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-rs/main.go" afterDir="false" />
+>>>>>>> 86691acc41e572e76e20c45422fefb040078be3f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="$PROJECT_DIR$/../../../go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -153,8 +157,14 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build stu" />
+<<<<<<< HEAD
       <item itemvalue="Go Build.go build stu/grpc-test" />
+=======
+      <item itemvalue="Go Build.go build stu/grpc-banchmark" />
+>>>>>>> 86691acc41e572e76e20c45422fefb040078be3f
       <item itemvalue="Go Build.go build stu/grpc-rs" />
+      <item itemvalue="Go Build.go build stu/grpc-test" />
+      <item itemvalue="Go Build.go build stu/schema" />
       <item itemvalue="Go Remote.Unnamed" />
       <item itemvalue="Go Build.go build stu/jsrpc" />
       <item itemvalue="Go Build.go build stu/jsrpc/client" />
@@ -193,6 +203,13 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
+=======
+    <state x="311" y="58" width="800" height="677" key="#GOROOT" timestamp="1584702224773">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="311" y="58" width="800" height="677" key="#GOROOT/67.27.1299.741@67.27.1299.741" timestamp="1584702224773" />
+>>>>>>> 86691acc41e572e76e20c45422fefb040078be3f
     <state width="466" height="466" key="DebuggerActiveHint" timestamp="1583393085993">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
@@ -250,10 +267,11 @@
     </state>
     <state width="1280" height="720" key="XDebugger.FullValuePopup/0.0.2560.1440@0.0.2560.1440" timestamp="1582073967170" />
     <state width="1280" height="677" key="XDebugger.FullValuePopup/0.23.2560.1353@0.23.2560.1353" timestamp="1583393278708" />
-    <state x="957" y="552" key="com.intellij.ide.util.TipDialog" timestamp="1582509282683">
-      <screen x="0" y="23" width="2560" height="1353" />
+    <state x="553" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1584855651222">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="957" y="552" key="com.intellij.ide.util.TipDialog/0.23.2560.1353@0.23.2560.1353" timestamp="1582509282683" />
+    <state x="553" y="317" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1584855651222" />
     <state x="938" y="456" width="683" height="486" key="find.popup" timestamp="1584497842476">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
@@ -322,6 +340,7 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/jsrpc/client/main.go</url>
           <line>45</line>
           <option name="timeStamp" value="16" />
@@ -331,6 +350,12 @@
           <line>75</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+=======
+          <url>file://$PROJECT_DIR$/grpc-rs/main.go</url>
+          <line>58</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+>>>>>>> 86691acc41e572e76e20c45422fefb040078be3f
       </breakpoints>
     </breakpoint-manager>
   </component>
