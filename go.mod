@@ -5,10 +5,12 @@ go 1.13
 require (
 	github.com/Shopify/sarama v1.25.0
 	github.com/bojand/ghz v0.49.0
+	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-sql-driver/mysql v1.5.0
+	github.com/gogo/protobuf v1.3.1
 	github.com/golang/protobuf v1.3.5
 	github.com/google/go-cmp v0.4.0 // indirect
 	github.com/gorilla/websocket v1.4.1

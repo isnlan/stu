@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edb628a-6719-4380-8586-a06b5db75dad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/elk/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsrpc/client/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsrpc/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-rs/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/block.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/block.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/common.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/common.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/consensus.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/consensus.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/message.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/message.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/peer.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-rs/protos/peer.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +54,11 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="YGiVBaeh" />
   </component>
@@ -77,7 +78,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grpc-banchmark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jsrpc" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -85,35 +86,29 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/grpc-banchmark" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/schema" />
       <recent name="$PROJECT_DIR$/gin_pg" />
       <recent name="$PROJECT_DIR$/websocket" />
       <recent name="$PROJECT_DIR$/oauth" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jsrpc" />
+      <recent name="$PROJECT_DIR$/elk" />
+      <recent name="$PROJECT_DIR$/grpc-banchmark" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build stu/grpc-rs">
+  <component name="RunManager" selected="Go Build.go build stu/jsrpc/client">
     <configuration name="go build stu" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="stu" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="stu" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build stu/grpc-banchmark" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="stu" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/grpc-banchmark/main.go" />
-      <package value="stu/grpc-banchmark" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -135,12 +130,21 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build stu/schema" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build stu/jsrpc" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="stu" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/schema/main.go" />
-      <package value="stu/schema" />
+      <filePath value="$PROJECT_DIR$/jsrpc/main.go" />
+      <package value="stu/jsrpc" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build stu/jsrpc/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="stu" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/jsrpc/client/main.go" />
+      <package value="stu/jsrpc/client" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -149,19 +153,19 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build stu" />
-      <item itemvalue="Go Build.go build stu/schema" />
       <item itemvalue="Go Build.go build stu/grpc-test" />
-      <item itemvalue="Go Build.go build stu/grpc-banchmark" />
       <item itemvalue="Go Build.go build stu/grpc-rs" />
       <item itemvalue="Go Remote.Unnamed" />
+      <item itemvalue="Go Build.go build stu/jsrpc" />
+      <item itemvalue="Go Build.go build stu/jsrpc/client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build stu/jsrpc/client" />
+        <item itemvalue="Go Build.go build stu/jsrpc" />
+        <item itemvalue="Go Build.go build stu" />
         <item itemvalue="Go Build.go build stu/grpc-rs" />
         <item itemvalue="Go Build.go build stu/grpc-test" />
-        <item itemvalue="Go Build.go build stu/grpc-banchmark" />
-        <item itemvalue="Go Build.go build stu" />
-        <item itemvalue="Go Build.go build stu/schema" />
       </list>
     </recent_temporary>
   </component>
@@ -189,54 +193,54 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="990" y="509" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576138314870">
-      <screen x="0" y="23" width="2560" height="1353" />
-    </state>
-    <state x="990" y="509" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1353@0.23.2560.1353" timestamp="1576138314870" />
     <state width="466" height="466" key="DebuggerActiveHint" timestamp="1583393085993">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="466" height="466" key="DebuggerActiveHint/0.23.2560.1353@0.23.2560.1353" timestamp="1583393085993" />
-    <state width="2518" height="386" key="GridCell.Tab.0.bottom" timestamp="1584685400620">
+    <state width="2518" height="386" key="GridCell.Tab.0.bottom" timestamp="1585900952608">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632099" />
-    <state width="2518" height="386" key="GridCell.Tab.0.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1584685400620" />
-    <state width="2518" height="386" key="GridCell.Tab.0.center" timestamp="1584685400620">
+    <state width="2518" height="386" key="GridCell.Tab.0.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1585900952608" />
+    <state width="2518" height="386" key="GridCell.Tab.0.center" timestamp="1585900952607">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632098" />
-    <state width="2518" height="386" key="GridCell.Tab.0.center/0.23.2560.1353@0.23.2560.1353" timestamp="1584685400620" />
-    <state width="2518" height="386" key="GridCell.Tab.0.left" timestamp="1584685400619">
+    <state width="2518" height="386" key="GridCell.Tab.0.center/0.23.2560.1353@0.23.2560.1353" timestamp="1585900952607" />
+    <state width="2518" height="386" key="GridCell.Tab.0.left" timestamp="1585900952606">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632096" />
-    <state width="2518" height="386" key="GridCell.Tab.0.left/0.23.2560.1353@0.23.2560.1353" timestamp="1584685400619" />
-    <state width="2518" height="386" key="GridCell.Tab.0.right" timestamp="1584685400620">
+    <state width="2518" height="386" key="GridCell.Tab.0.left/0.23.2560.1353@0.23.2560.1353" timestamp="1585900952606" />
+    <state width="2518" height="386" key="GridCell.Tab.0.right" timestamp="1585900952608">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632098" />
-    <state width="2518" height="386" key="GridCell.Tab.0.right/0.23.2560.1353@0.23.2560.1353" timestamp="1584685400620" />
-    <state width="2518" height="346" key="GridCell.Tab.1.bottom" timestamp="1583712534679">
+    <state width="2518" height="386" key="GridCell.Tab.0.right/0.23.2560.1353@0.23.2560.1353" timestamp="1585900952608" />
+    <state width="2518" height="346" key="GridCell.Tab.1.bottom" timestamp="1585900877142">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632102" />
-    <state width="2518" height="346" key="GridCell.Tab.1.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1583712534679" />
-    <state width="2518" height="346" key="GridCell.Tab.1.center" timestamp="1583712534678">
+    <state width="2518" height="346" key="GridCell.Tab.1.bottom/0.23.2560.1353@0.23.2560.1353" timestamp="1585900877142" />
+    <state width="2518" height="346" key="GridCell.Tab.1.center" timestamp="1585900877141">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632101" />
-    <state width="2518" height="346" key="GridCell.Tab.1.center/0.23.2560.1353@0.23.2560.1353" timestamp="1583712534678" />
-    <state width="2518" height="346" key="GridCell.Tab.1.left" timestamp="1583712534678">
+    <state width="2518" height="346" key="GridCell.Tab.1.center/0.23.2560.1353@0.23.2560.1353" timestamp="1585900877141" />
+    <state width="2518" height="346" key="GridCell.Tab.1.left" timestamp="1585900877140">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632100" />
-    <state width="2518" height="346" key="GridCell.Tab.1.left/0.23.2560.1353@0.23.2560.1353" timestamp="1583712534678" />
-    <state width="2518" height="346" key="GridCell.Tab.1.right" timestamp="1583712534679">
+    <state width="2518" height="346" key="GridCell.Tab.1.left/0.23.2560.1353@0.23.2560.1353" timestamp="1585900877140" />
+    <state width="2518" height="346" key="GridCell.Tab.1.right" timestamp="1585900877141">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state width="2518" height="379" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582186632101" />
-    <state width="2518" height="346" key="GridCell.Tab.1.right/0.23.2560.1353@0.23.2560.1353" timestamp="1583712534679" />
+    <state width="2518" height="346" key="GridCell.Tab.1.right/0.23.2560.1353@0.23.2560.1353" timestamp="1585900877141" />
+    <state x="781" y="338" key="SettingsEditor" timestamp="1585806979886">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="781" y="338" key="SettingsEditor/0.23.2560.1353@0.23.2560.1353" timestamp="1585806979886" />
     <state x="1009" y="437" width="540" height="524" key="StructurePopup" timestamp="1584665427760">
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
@@ -254,6 +258,10 @@
       <screen x="0" y="23" width="2560" height="1353" />
     </state>
     <state x="938" y="456" width="683" height="486" key="find.popup/0.23.2560.1353@0.23.2560.1353" timestamp="1584497842476" />
+    <state x="1154" y="562" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1585799963166">
+      <screen x="0" y="23" width="2560" height="1353" />
+    </state>
+    <state x="1154" y="562" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.23.2560.1353@0.23.2560.1353" timestamp="1585799963166" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -304,11 +312,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file:///usr/local/go/src/encoding/json/decode.go</url>
           <line>177</line>
           <option name="timeStamp" value="14" />
@@ -317,6 +320,16 @@
           <url>file:///usr/local/go/src/encoding/json/decode.go</url>
           <line>887</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/jsrpc/client/main.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file:///usr/local/go/src/net/rpc/jsonrpc/client.go</url>
+          <line>75</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

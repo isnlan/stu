@@ -25,6 +25,8 @@ github.com/bgentry/speakeasy v0.1.0/go.mod h1:+zsyZBPWlz7T6j88CTgSN5bM796AkVf0kB
 github.com/bojand/ghz v0.49.0 h1:jgnTV3EUf62PcqBdSW4xQp4r4cWxNTTas7D+8zOyauU=
 github.com/bojand/ghz v0.49.0/go.mod h1:P+Cv1KzcnUDOZu6viHz/lHFahYVi2Tvlp1O7v+8f7BQ=
 github.com/bojand/hri v1.1.0/go.mod h1:qwGosuHpNn1S0nyw/mExN0+WZrDf4bQyWjhWh51y3VY=
+github.com/bshuster-repo/logrus-logstash-hook v0.4.1 h1:pgAtgj+A31JBVtEHu2uHuEx0n+2ukqUJnS2vVe5pQNA=
+github.com/bshuster-repo/logrus-logstash-hook v0.4.1/go.mod h1:zsTqEiSzDgAa/8GZR7E1qaXrhYNDKBYy5/dWPTIflbk=
 github.com/bsm/sarama-cluster v2.1.15+incompatible h1:RkV6WiNRnqEEbp81druK8zYhmnIgdOjqSVi0+9Cnl2A=
 github.com/bsm/sarama-cluster v2.1.15+incompatible/go.mod h1:r7ao+4tTNXvWm+VRpRJchr2kQhqxgmAp2iEX5W96gMM=
 github.com/btcsuite/btcd v0.0.0-20190213025234-306aecffea32/go.mod h1:DrZx5ec/dmnfpw9KyYoQyYo7d0KEvTkk/5M/vbZjAr8=
