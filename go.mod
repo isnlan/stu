@@ -3,17 +3,24 @@ module stu
 go 1.13
 
 require (
+	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
 	github.com/Shopify/sarama v1.25.0
+	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/bojand/ghz v0.49.0
 	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
+	github.com/fsouza/go-dockerclient v1.6.4 // indirect
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/protobuf v1.3.5
-	github.com/google/go-cmp v0.4.0 // indirect
 	github.com/gorilla/websocket v1.4.1
+	github.com/hashicorp/go-version v1.2.0 // indirect
+	github.com/hyperledger/fabric v2.1.0+incompatible
+	github.com/hyperledger/fabric-amcl v0.0.0-20200128223036-d1aa2665426a // indirect
+	github.com/hyperledger/fabric-lib-go v1.0.0 // indirect
+	github.com/hyperledger/fabric-protos-go v0.0.0-20200422100619-316dc6798e96
 	github.com/ipfs/go-blockservice v0.1.2
 	github.com/ipfs/go-cid v0.0.5
 	github.com/ipfs/go-datastore v0.4.2
@@ -25,6 +32,7 @@ require (
 	github.com/ipfs/interface-go-ipfs-core v0.2.5
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/json-iterator/go v1.1.9 // indirect
+	github.com/miekg/pkcs11 v1.0.3 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/onsi/ginkgo v1.11.0 // indirect
@@ -38,6 +46,8 @@ require (
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.4.0
+	github.com/sykesm/zap-logfmt v0.0.3 // indirect
+	github.com/tedsuo/ifrit v0.0.0-20191009134036-9a97d0632f00 // indirect
 	github.com/uber/jaeger-client-go v2.21.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0
@@ -46,5 +56,5 @@ require (
 	golang.org/x/net v0.0.0-20191021144547-ec77196f6094
 	golang.org/x/sys v0.0.0-20200122134326-e047566fdf82 // indirect
 	google.golang.org/genproto v0.0.0-20190927181202-20e1ac93f88c // indirect
-	google.golang.org/grpc v1.27.0
+	google.golang.org/grpc v1.27.1
 )
