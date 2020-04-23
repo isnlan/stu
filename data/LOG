@@ -60,3 +60,26 @@
 11:17:36.599143 db@janitor removing table-11
 11:17:36.599205 db@janitor removing table-8
 11:17:36.599281 db@open done T·27.345484ms
+=============== Apr 23, 2020 (CST) ===============
+14:20:37.934638 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:20:37.936038 version@stat F·[2 1] S·441B[280B 161B] Sc·[0.50 0.00]
+14:20:37.936061 db@open opening
+14:20:37.936142 journal@recovery F·1
+14:20:37.936644 journal@recovery recovering @16
+14:20:37.941700 memdb@flush created L0@18 N·2 S·161B "cha..\x00k1,v14":"cha..d\x00s,v15"
+14:20:37.942007 version@stat F·[3 1] S·602B[441B 161B] Sc·[0.75 0.00]
+14:20:37.976012 db@janitor F·6 G·0
+14:20:37.976042 db@open done T·39.969833ms
+=============== Apr 23, 2020 (CST) ===============
+14:39:48.953067 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:39:48.954437 version@stat F·[3 1] S·602B[441B 161B] Sc·[0.75 0.00]
+14:39:48.954459 db@open opening
+14:39:48.954531 journal@recovery F·1
+14:39:48.955023 journal@recovery recovering @19
+14:39:48.961024 memdb@flush created L0@21 N·2 S·161B "cha..\x00k1,v17":"cha..d\x00s,v18"
+14:39:48.961369 version@stat F·[4 1] S·763B[602B 161B] Sc·[1.00 0.00]
+14:39:48.993109 db@janitor F·7 G·0
+14:39:48.993143 db@open done T·38.673009ms
+14:39:48.993230 table@compaction L0·3 -> L1·1 S·644B Q·19
+14:39:48.998320 table@build created L1@24 N·2 S·161B "cha..\x00k1,v17":"cha..d\x00s,v18"
+14:39:49.001386 version@stat F·[1 1] S·280B[119B 161B] Sc·[0.25 0.00]

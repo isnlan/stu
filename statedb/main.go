@@ -75,6 +75,14 @@ func StateDBUse(vdbProivder statedb.VersionedDBProvider) {
 	batch, err := ApplyWriteSet(txRwSetTemp, height)
 	check(err)
 
+	vaildtor := &Validator{
+		DB:     versionedDB,
+		Hasher: nil,
+	}
+	validationCode, err := vaildtor.validateTx(txRwSetTemp)
+	check(err)
+	fmt.Println("code:", validationCode)
+
 	err = versionedDB.ApplyUpdates(batch, height)
 	check(err)
 
