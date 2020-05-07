@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: getting-started
+  name: skaffold-cicd
 spec:
   imagePullSecrets:
     - name: regsecret
   containers:
-    - name: getting-started
+    - name: skaffold-cicd
       image: registry.cn-hangzhou.aliyuncs.com/isnlan/skaffold
