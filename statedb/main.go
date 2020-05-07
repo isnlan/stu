@@ -111,6 +111,8 @@ func ApplyWriteSet(txRWSet *rwsetutil.TxRwSet, txHeight *version.Height) (*state
 			} else {
 				batch.PutValAndMetadata(ns, key, keyops.value, keyops.metadata, txHeight)
 			}
+		} else {
+			// TODO
 		}
 	}
 	return batch, nil

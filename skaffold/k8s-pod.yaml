@@ -1,8 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysvc
+  name: getting-started
 spec:
+  imagePullSecrets:
+    - name: regsecret
   containers:
-    - name: mysvc
-      image: snlan/rep:dirty
+    - name: getting-started
+      image: registry.cn-hangzhou.aliyuncs.com/isnlan/skaffold
