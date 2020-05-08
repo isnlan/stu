@@ -7,7 +7,7 @@ import (
 
 func main() {
 	for {
-		fmt.Println("Hello Skaffold cicd!fsfsfdsf")
+		fmt.Println("bazel build golang")
 		time.Sleep(time.Second * 2)
 	}
 }
