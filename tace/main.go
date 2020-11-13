@@ -1,27 +1,29 @@
-package tace
+package main
 
 import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/opentracing-contrib/go-stdlib/nethttp"
-	"github.com/opentracing/opentracing-go"
-	"github.com/opentracing/opentracing-go/ext"
-	otlog "github.com/opentracing/opentracing-go/log"
-	"github.com/uber/jaeger-client-go/config"
 	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/opentracing-contrib/go-stdlib/nethttp"
+	"github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go/ext"
+	otlog "github.com/opentracing/opentracing-go/log"
+	"github.com/uber/jaeger-client-go/config"
 )
 
 const (
 	server = "server"
 	client = "client"
 )
+
 var (
-	actorKind  = flag.String("actor", "server", "server or client")
+	actorKind = flag.String("actor", "server", "server or client")
 )
 
 func main() {

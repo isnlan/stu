@@ -2,7 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: registry.cn-hangzhou.aliyuncs.com/isnlan/skaffold
+    - image: harbor-k8s.kingdeeresearch.com/kchain/kbcs-test:latest
 deploy:
   kubectl:
     manifests:

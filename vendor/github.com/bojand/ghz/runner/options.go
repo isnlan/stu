@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"os"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -19,11 +20,12 @@ import (
 // RunConfig represents the request Configs
 type RunConfig struct {
 	// call settings
-	call        string
-	host        string
-	proto       string
-	importPaths []string
-	protoset    string
+	call              string
+	host              string
+	proto             string
+	importPaths       []string
+	protoset          string
+	enableCompression bool
 
 	// security settings
 	creds      credentials.TransportCredentials
@@ -57,7 +59,7 @@ type RunConfig struct {
 	data     []byte
 	binary   bool
 	metadata []byte
-	rmd      *map[string]string
+	rmd      map[string]string
 
 	// debug
 	hasLog bool
@@ -71,6 +73,57 @@ type RunConfig struct {
 
 // Option controls some aspect of run
 type Option func(*RunConfig) error
+
+// WithConfigFromFile uses a configuration JSON file to populate the RunConfig
+//  WithConfig("config.json")
+func WithConfigFromFile(file string) Option {
+	return func(o *RunConfig) error {
+		data, err := ioutil.ReadFile(file)
+		if err != nil {
+			return fmt.Errorf("read config from file: %w", err)
+		}
+		var config Config
+		if err := json.Unmarshal(data, &config); err != nil {
+			return fmt.Errorf("unmarshal config: %w", err)
+		}
+		for _, option := range fromConfig(&config) {
+			if err := option(o); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+}
+
+// WithConfigFromReader uses a reader containing JSON data to populate the RunConfig
+// See also: WithConfigFromFile
+func WithConfigFromReader(reader io.Reader) Option {
+	return func(o *RunConfig) error {
+		var config Config
+		if err := json.NewDecoder(reader).Decode(&config); err != nil {
+			return fmt.Errorf("unmarshal config: %w", err)
+		}
+		for _, option := range fromConfig(&config) {
+			if err := option(o); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+}
+
+// WithConfig uses the configuration to populate the RunConfig
+// See also: WithConfigFromFile, WithConfigFromReader
+func WithConfig(c *Config) Option {
+	return func(o *RunConfig) error {
+		for _, option := range fromConfig(c) {
+			if err := option(o); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+}
 
 // WithCertificate specifies the certificate options for the run
 //	WithCertificate("client.crt", "client.key")
@@ -326,7 +379,7 @@ func WithMetadataFromJSON(md string) Option {
 // 	md["token"] = "foobar"
 // 	md["request-id"] = "123"
 // 	WithMetadata(&md)
-func WithMetadata(md *map[string]string) Option {
+func WithMetadata(md map[string]string) Option {
 	return func(o *RunConfig) error {
 		mdJSON, err := json.Marshal(md)
 		if err != nil {
@@ -372,7 +425,7 @@ func WithName(name string) Option {
 // 	tags["env"] = "staging"
 // 	tags["created by"] = "joe developer"
 // 	WithTags(&tags)
-func WithTags(tags *map[string]string) Option {
+func WithTags(tags map[string]string) Option {
 	return func(o *RunConfig) error {
 		tagsJSON, err := json.Marshal(tags)
 		if err != nil {
@@ -451,7 +504,7 @@ func WithStreamInterval(d time.Duration) Option {
 // 	md["token"] = "foobar"
 // 	md["request-id"] = "123"
 // 	WithReflectionMetadata(&md)
-func WithReflectionMetadata(md *map[string]string) Option {
+func WithReflectionMetadata(md map[string]string) Option {
 	return func(o *RunConfig) error {
 		o.rmd = md
 
@@ -537,6 +590,16 @@ func newConfig(call, host string, options ...Option) (*RunConfig, error) {
 	return c, nil
 }
 
+// WithEnableCompression specifies that requests should be done using gzip Compressor
+// WithEnableCompression(true)
+func WithEnableCompression(enableCompression bool) Option {
+	return func(o *RunConfig) error {
+		o.enableCompression = enableCompression
+
+		return nil
+	}
+}
+
 func createClientTransportCredentials(skipVerify bool, cacertFile, clientCertFile, clientKeyFile, cname string) (credentials.TransportCredentials, error) {
 	var tlsConf tls.Config
 
@@ -572,4 +635,66 @@ func createClientTransportCredentials(skipVerify bool, cacertFile, clientCertFil
 	}
 
 	return credentials.NewTLS(&tlsConf), nil
+}
+
+func fromConfig(cfg *Config) []Option {
+	// set up all the options
+	options := make([]Option, 0, 17)
+
+	options = append(options,
+		WithProtoFile(cfg.Proto, cfg.ImportPaths),
+		WithProtoset(cfg.Protoset),
+		WithRootCertificate(cfg.RootCert),
+		WithCertificate(cfg.Cert, cfg.Key),
+		WithServerNameOverride(cfg.CName),
+		WithSkipTLSVerify(cfg.SkipTLSVerify),
+		WithInsecure(cfg.Insecure),
+		WithAuthority(cfg.Authority),
+		WithConcurrency(cfg.C),
+		WithTotalRequests(cfg.N),
+		WithQPS(cfg.QPS),
+		WithTimeout(time.Duration(cfg.Timeout)),
+		WithRunDuration(time.Duration(cfg.Z)),
+		WithDialTimeout(time.Duration(cfg.DialTimeout)),
+		WithKeepalive(time.Duration(cfg.KeepaliveTime)),
+		WithName(cfg.Name),
+		WithCPUs(cfg.CPUs),
+		WithMetadata(cfg.Metadata),
+		WithTags(cfg.Tags),
+		WithStreamInterval(time.Duration(cfg.SI)),
+		WithReflectionMetadata(cfg.ReflectMetadata),
+		WithConnections(cfg.Connections),
+		WithEnableCompression(cfg.EnableCompression),
+		WithDurationStopAction(cfg.ZStop),
+		func(o *RunConfig) error {
+			o.call = cfg.Call
+			return nil
+		},
+		func(o *RunConfig) error {
+			o.host = cfg.Host
+			return nil
+		},
+	)
+
+	if strings.TrimSpace(cfg.MetadataPath) != "" {
+		options = append(options, WithMetadataFromFile(strings.TrimSpace(cfg.MetadataPath)))
+	}
+
+	// data
+	if dataStr, ok := cfg.Data.(string); ok && dataStr == "@" {
+		options = append(options, WithDataFromReader(os.Stdin))
+	} else if strings.TrimSpace(cfg.DataPath) != "" {
+		options = append(options, WithDataFromFile(strings.TrimSpace(cfg.DataPath)))
+	} else {
+		options = append(options, WithData(cfg.Data))
+	}
+
+	// or binary data
+	if len(cfg.BinData) > 0 {
+		options = append(options, WithBinaryData(cfg.BinData))
+	}
+	if len(cfg.BinDataPath) > 0 {
+		options = append(options, WithBinaryDataFromFile(cfg.BinDataPath))
+	}
+	return options
 }

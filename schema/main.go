@@ -3,10 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/xeipuuv/gojsonschema"
 )
 
-func main() {
+func main1() {
 
 	schema := `{
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -36,14 +37,12 @@ func main() {
 }`
 	schemaLoader := gojsonschema.NewStringLoader(schema)
 
-
 	doc := `{
     "name": "Sherlock Holmes",
     "email": "sherlock@gmail.com",
     "age": 164
 }`
 	documentLoader := gojsonschema.NewStringLoader(doc)
-
 
 	result, err := gojsonschema.Validate(schemaLoader, documentLoader)
 	if err != nil {
@@ -73,6 +72,82 @@ func main() {
 	}
 
 	fmt.Println(js)
+}
+
+func main() {
+	s := `
+{
+    "title": "967550248832467968_conm9_100000_864352733635858432_conm_pursupagrt_datatype",
+    "description": "967550248832467968_conm9_100000_864352733635858432_conm_pursupagrt_datatype",
+    "required": [
+        "billno",
+        "billname",
+        "type",
+        "1stparty",
+        "2ndparty",
+        "partc",
+        "biztime",
+        "validdate",
+        "biztimeend",
+        "srcbillid",
+        "srccontractnum",
+        "srcbillid",
+        "detail",
+        "other",
+        "exenode"
+    ],
+    "type": "object",
+    "properties": {
+        "billno": {
+            "type": "string"
+        },
+        "billname": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "1stparty": {
+            "type": "string"
+        },
+        "2ndparty": {
+            "type": "string"
+        },
+        "partc": {
+            "type": "string"
+        },
+        "biztime": {
+            "type": "string"
+        },
+        "validdate": {
+            "type": "string"
+        },
+        "biztimeend": {
+            "type": "string"
+        },
+        "srcbillid": {
+            "type": "string"
+        },
+        "srccontractnum": {
+            "type": "string"
+        },
+        "detail": {
+            "type": "string"
+        },
+        "other": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exenode": {
+            "type": "string"
+        }
+    }
+}`
+	loader := gojsonschema.NewStringLoader(s)
+	_, err := gojsonschema.NewSchema(loader)
+	fmt.Println(err)
 }
 
 type JsonSchema struct {

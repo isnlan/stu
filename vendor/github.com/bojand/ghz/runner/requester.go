@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 	"sync"
@@ -103,8 +104,8 @@ func newRequester(c *RunConfig) (*Requester, error) {
 		ctx, _ := context.WithTimeout(context.Background(), c.dialTimeout)
 
 		md := make(metadata.MD)
-		if c.rmd != nil && len(*c.rmd) > 0 {
-			md = metadata.New(*c.rmd)
+		if c.rmd != nil && len(c.rmd) > 0 {
+			md = metadata.New(c.rmd)
 		}
 
 		refCtx := metadata.NewOutgoingContext(ctx, md)
@@ -312,6 +313,13 @@ func (b *Requester) newClientConn(withStatsHandler bool) (*grpc.ClientConn, erro
 	if b.config.hasLog {
 		b.config.log.Debugw("Creating client connection", "options", opts)
 	}
+
+	// increase max receive and send message sizes
+	opts = append(opts,
+		grpc.WithDefaultCallOptions(
+			grpc.MaxCallRecvMsgSize(math.MaxInt32),
+			grpc.MaxCallSendMsgSize(math.MaxInt32),
+		))
 
 	// create client connection
 	return grpc.DialContext(ctx, b.config.host, opts...)

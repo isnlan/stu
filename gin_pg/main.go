@@ -5,16 +5,16 @@ import (
 )
 
 func main() {
-router := gin.Default()
-router.GET("/ping", func(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": "pong",
+	router := gin.Default()
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
 	})
-})
 
-router.NoRoute(HandleNotFound)
-router.NoMethod(HandleNotFound)
-router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	router.NoRoute(HandleNotFound)
+	router.NoMethod(HandleNotFound)
+	router.Run("0.0.0.0:8081") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
 
 func HandleNotFound(c *gin.Context) {

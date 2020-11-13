@@ -3,20 +3,18 @@ module stu
 go 1.13
 
 require (
-	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
 	github.com/Shopify/sarama v1.25.0
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
-	github.com/bojand/ghz v0.49.0
+	github.com/bojand/ghz v0.55.0
 	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
-	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
-	github.com/fsouza/go-dockerclient v1.6.4 // indirect
-	github.com/gin-gonic/gin v1.5.0
+	github.com/fsouza/go-dockerclient v1.6.4
+	github.com/gin-gonic/gin v1.6.3
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gogo/protobuf v1.3.1
-	github.com/golang/protobuf v1.3.5
+	github.com/golang/protobuf v1.3.3
 	github.com/gorilla/websocket v1.4.1
-	github.com/hashicorp/go-version v1.2.0 // indirect
+	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hyperledger/fabric v2.1.0+incompatible
 	github.com/hyperledger/fabric-amcl v0.0.0-20200128223036-d1aa2665426a // indirect
 	github.com/hyperledger/fabric-lib-go v1.0.0 // indirect
@@ -31,10 +29,8 @@ require (
 	github.com/ipfs/go-path v0.0.7
 	github.com/ipfs/interface-go-ipfs-core v0.2.5
 	github.com/jmoiron/sqlx v1.2.0
-	github.com/json-iterator/go v1.1.9 // indirect
+	github.com/klauspost/compress v1.10.4 // indirect
 	github.com/miekg/pkcs11 v1.0.3 // indirect
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/onsi/ginkgo v1.11.0 // indirect
 	github.com/onsi/gomega v1.8.1 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
@@ -42,9 +38,10 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pkg/errors v0.9.0
 	github.com/proullon/ramsql v0.0.0-20181213202341-817cee58a244
-	github.com/rubenv/sql-migrate v0.0.0-20191213152630-06338513c237
+	github.com/rubenv/sql-migrate v0.0.0-20200616145509-8d140a17f351
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da
 	github.com/sirupsen/logrus v1.4.2
+	github.com/spf13/viper v1.3.2
 	github.com/stretchr/testify v1.4.0
 	github.com/sykesm/zap-logfmt v0.0.3 // indirect
 	github.com/tedsuo/ifrit v0.0.0-20191009134036-9a97d0632f00 // indirect
@@ -53,8 +50,6 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0
 	go.mongodb.org/mongo-driver v1.3.0
 	go.uber.org/atomic v1.5.1 // indirect
-	golang.org/x/net v0.0.0-20191021144547-ec77196f6094
-	golang.org/x/sys v0.0.0-20200122134326-e047566fdf82 // indirect
-	google.golang.org/genproto v0.0.0-20190927181202-20e1ac93f88c // indirect
+	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
 	google.golang.org/grpc v1.27.1
 )

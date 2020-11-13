@@ -1,18 +1,20 @@
 package main
 
 import (
-	"fmt"
-	"github.com/gogo/protobuf/proto"
-	"reflect"
-	"stu/grpc-test/helloworld"
+	"log"
+	"net/http"
+	"net/url"
+	"stu/wsproxy"
 )
 
-func print(msg proto.Message)  {
-	fmt.Println(reflect.TypeOf(msg).String())
-}
-
 func main() {
-	req := helloworld.HelloRequest{Name: "s"}
-	print(&req)
-}
+	u, err := url.Parse("ws://dapp-5face284f6add4bd611d2264.dapp-project:3000/services")
+	if err != nil {
+		log.Fatalln(err)
+	}
 
+	err = http.ListenAndServe(":3001", wsproxy.NewProxy(u))
+	if err != nil {
+		log.Fatalln(err)
+	}
+}

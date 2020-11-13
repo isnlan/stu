@@ -1,10 +1,14 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net/rpc"
 	"time"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 )
 
 type Person struct {
@@ -23,16 +27,15 @@ func connect() *rpc.Client {
 func main() {
 	client := connect()
 
-	p := Person{Name:"ll", Age:340}
+	p := Person{Name: "ll", Age: 340}
 	var reply Person
 	err := client.Call("T.SetPerson", &p, &reply)
 	if err != nil {
 		panic(err)
 	}
 
-
 	fmt.Println(reply)
-	time.Sleep(time.Minute*10)
+	time.Sleep(time.Minute * 10)
 }
 
 func main1() {
@@ -56,4 +59,3 @@ func main1() {
 	println("ok", conn)
 
 }
-
