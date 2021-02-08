@@ -1,20 +1,22 @@
 package main
 
 import (
-	"log"
-	"net/http"
-	"net/url"
-	"stu/wsproxy"
+	"fmt"
+	"strings"
 )
 
-func main() {
-	u, err := url.Parse("ws://dapp-5face284f6add4bd611d2264.dapp-project:3000/services")
+func check(err error) {
 	if err != nil {
-		log.Fatalln(err)
+		panic(err)
 	}
+}
 
-	err = http.ListenAndServe(":3001", wsproxy.NewProxy(u))
-	if err != nil {
-		log.Fatalln(err)
-	}
+type User struct {
+	name string
+}
+
+func main() {
+	s := "Md5"
+	lower := strings.ToLower(s)
+	fmt.Println(lower, 1)
 }
