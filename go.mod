@@ -4,15 +4,15 @@ go 1.13
 
 require (
 	github.com/Shopify/sarama v1.25.0
-	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/bojand/ghz v0.55.0
 	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
+	github.com/ethereum/go-ethereum v1.9.25
 	github.com/fsouza/go-dockerclient v1.6.4
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gogo/protobuf v1.3.1
-	github.com/golang/protobuf v1.3.3
+	github.com/golang/protobuf v1.4.2
 	github.com/gorilla/websocket v1.4.1
 	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hyperledger/fabric v2.1.0+incompatible
@@ -31,9 +31,6 @@ require (
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/klauspost/compress v1.10.4 // indirect
 	github.com/miekg/pkcs11 v1.0.3 // indirect
-	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
-	github.com/onsi/ginkgo v1.11.0 // indirect
-	github.com/onsi/gomega v1.8.1 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
 	github.com/opentracing/opentracing-go v1.1.0
@@ -51,6 +48,6 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0
 	go.mongodb.org/mongo-driver v1.3.0
 	go.uber.org/atomic v1.5.1 // indirect
-	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
+	golang.org/x/net v0.0.0-20200822124328-c89045814202
 	google.golang.org/grpc v1.27.1
 )
