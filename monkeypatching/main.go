@@ -8,6 +8,8 @@ import (
 	"bou.ke/monkey"
 )
 
+/// go tool: -gcflags=-l
+
 func main() {
 	monkey.Patch(fmt.Println, func(a ...interface{}) (n int, err error) {
 		s := make([]interface{}, len(a))
