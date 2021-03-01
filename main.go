@@ -1,22 +1,30 @@
 package main
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
-	"strings"
+	"sync/atomic"
+	"time"
 )
-
-func check(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
 
 type User struct {
 	name string
 }
 
+type C struct {
+	s atomic.Value
+}
+
+func MakeMongoIdFromString(str string) string {
+	bytes := sha256.Sum256([]byte(str))
+	var dst [12]byte
+	copy(dst[:], bytes[:])
+	return hex.EncodeToString(dst[:])
+}
+
 func main() {
-	s := "Md5"
-	lower := strings.ToLower(s)
-	fmt.Println(lower, 1)
+	t := time.Now().Unix()
+	unix := time.Unix(t, 0)
+	fmt.Println(unix)
 }

@@ -3,6 +3,7 @@ module stu
 go 1.13
 
 require (
+	bou.ke/monkey v1.0.2
 	github.com/Shopify/sarama v1.25.0
 	github.com/bojand/ghz v0.55.0
 	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
@@ -12,6 +13,7 @@ require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gogo/protobuf v1.3.1
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.4.2
 	github.com/gorilla/websocket v1.4.1
 	github.com/hashicorp/go-version v1.2.1 // indirect
@@ -30,6 +32,7 @@ require (
 	github.com/ipfs/interface-go-ipfs-core v0.2.5
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/klauspost/compress v1.10.4 // indirect
+	github.com/looplab/fsm v0.2.0
 	github.com/miekg/pkcs11 v1.0.3 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
@@ -49,5 +52,6 @@ require (
 	go.mongodb.org/mongo-driver v1.3.0
 	go.uber.org/atomic v1.5.1 // indirect
 	golang.org/x/net v0.0.0-20200822124328-c89045814202
+	gonum.org/v1/plot v0.8.1
 	google.golang.org/grpc v1.27.1
 )
