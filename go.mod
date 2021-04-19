@@ -8,7 +8,7 @@ require (
 	github.com/bojand/ghz v0.55.0
 	github.com/bshuster-repo/logrus-logstash-hook v0.4.1
 	github.com/bsm/sarama-cluster v2.1.15+incompatible
-	github.com/ethereum/go-ethereum v1.9.25
+	github.com/ethereum/go-ethereum v1.10.2
 	github.com/fsouza/go-dockerclient v1.6.4
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-sql-driver/mysql v1.5.0
@@ -37,13 +37,13 @@ require (
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
 	github.com/opentracing/opentracing-go v1.1.0
-	github.com/pkg/errors v0.9.0
+	github.com/pkg/errors v0.9.1
 	github.com/proullon/ramsql v0.0.0-20181213202341-817cee58a244
 	github.com/rubenv/sql-migrate v0.0.0-20200616145509-8d140a17f351
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da
 	github.com/sirupsen/logrus v1.4.2
-	github.com/spf13/viper v1.3.2
-	github.com/stretchr/testify v1.4.0
+	github.com/spf13/viper v1.7.0
+	github.com/stretchr/testify v1.7.0
 	github.com/sykesm/zap-logfmt v0.0.3 // indirect
 	github.com/tedsuo/ifrit v0.0.0-20191009134036-9a97d0632f00 // indirect
 	github.com/uber/jaeger-client-go v2.21.1+incompatible
@@ -51,7 +51,6 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0
 	go.mongodb.org/mongo-driver v1.3.0
 	go.uber.org/atomic v1.5.1 // indirect
-	golang.org/x/net v0.0.0-20200822124328-c89045814202
-	gonum.org/v1/plot v0.8.1
+	golang.org/x/net v0.0.0-20210220033124-5f55cee0dc0d
 	google.golang.org/grpc v1.27.1
 )
