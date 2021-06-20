@@ -48,10 +48,7 @@ func (c Curve) Point(t float64) vg.Point {
 	c[0].Point = c[0].Control
 	u := t
 	for i, p := range c[1:] {
-		c[i+1].Point = vg.Point{
-			X: p.Control.X * vg.Length(u),
-			Y: p.Control.Y * vg.Length(u),
-		}
+		c[i+1].Point = vg.Point{p.Control.X * vg.Length(u), p.Control.Y * vg.Length(u)}
 		u *= t
 	}
 

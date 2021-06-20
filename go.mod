@@ -14,8 +14,8 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/golang/protobuf v1.4.2
-	github.com/gorilla/websocket v1.4.1
+	github.com/golang/protobuf v1.4.3
+	github.com/gorilla/websocket v1.4.2
 	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hyperledger/fabric v2.1.0+incompatible
 	github.com/hyperledger/fabric-amcl v0.0.0-20200128223036-d1aa2665426a // indirect
@@ -38,6 +38,7 @@ require (
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pkg/errors v0.9.1
+	github.com/prometheus/client_golang v1.3.0
 	github.com/proullon/ramsql v0.0.0-20181213202341-817cee58a244
 	github.com/rubenv/sql-migrate v0.0.0-20200616145509-8d140a17f351
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da
@@ -52,5 +53,6 @@ require (
 	go.mongodb.org/mongo-driver v1.3.0
 	go.uber.org/atomic v1.5.1 // indirect
 	golang.org/x/net v0.0.0-20210220033124-5f55cee0dc0d
+	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
 	google.golang.org/grpc v1.27.1
 )

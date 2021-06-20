@@ -1,0 +1,4 @@
+package inter
+
+func f() {
+}

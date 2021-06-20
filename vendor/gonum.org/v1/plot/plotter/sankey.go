@@ -183,7 +183,6 @@ func NewSankey(flows ...Flow) (*Sankey, error) {
 		Rotation: math.Pi / 2,
 		XAlign:   draw.XCenter,
 		YAlign:   draw.YCenter,
-		Handler:  plot.DefaultTextHandler,
 	}
 	s.StockBarWidth = s.TextStyle.Font.Extents().Height * 1.15
 
@@ -261,10 +260,10 @@ func (s *Sankey) Plot(c draw.Canvas, plt *plot.Plot) {
 
 		// Here we fill the stock bars.
 		pts := []vg.Point{
-			{X: catMin, Y: valMin},
-			{X: catMin, Y: valMax},
-			{X: catMax, Y: valMax},
-			{X: catMax, Y: valMin},
+			{catMin, valMin},
+			{catMin, valMax},
+			{catMax, valMax},
+			{catMax, valMin},
 		}
 		if color != nil {
 			c.FillPolygon(color, pts) // poly)
@@ -274,20 +273,20 @@ func (s *Sankey) Plot(c draw.Canvas, plt *plot.Plot) {
 
 		// Here we draw the bottom edge.
 		pts = []vg.Point{
-			{X: catMin, Y: valMin},
-			{X: catMax, Y: valMin},
+			{catMin, valMin},
+			{catMax, valMin},
 		}
 		c.StrokeLines(lineStyle, pts)
 
 		// Here we draw the top edge plus vertical edges where there are
 		// no flows connected.
 		pts = []vg.Point{
-			{X: catMin, Y: valMax},
-			{X: catMax, Y: valMax},
+			{catMin, valMax},
+			{catMax, valMax},
 		}
 		if stk.receptorValue < stk.sourceValue {
 			y := trVal(stk.max - (stk.sourceValue - stk.receptorValue))
-			pts = append([]vg.Point{{X: catMin, Y: y}}, pts...)
+			pts = append([]vg.Point{{catMin, y}}, pts...)
 		} else if stk.sourceValue < stk.receptorValue {
 			y := trVal(stk.max - (stk.receptorValue - stk.sourceValue))
 			pts = append(pts, vg.Point{X: catMax, Y: y})
@@ -450,26 +449,26 @@ type sankeyFlowThumbnailer struct {
 func (t sankeyFlowThumbnailer) Thumbnail(c *draw.Canvas) {
 	// Here we draw the fill.
 	pts := []vg.Point{
-		{X: c.Min.X, Y: c.Min.Y},
-		{X: c.Min.X, Y: c.Max.Y},
-		{X: c.Max.X, Y: c.Max.Y},
-		{X: c.Max.X, Y: c.Min.Y},
+		{c.Min.X, c.Min.Y},
+		{c.Min.X, c.Max.Y},
+		{c.Max.X, c.Max.Y},
+		{c.Max.X, c.Min.Y},
 	}
 	poly := c.ClipPolygonY(pts)
 	c.FillPolygon(t.Color, poly)
 
 	// Here we draw the upper border.
 	pts = []vg.Point{
-		{X: c.Min.X, Y: c.Max.Y},
-		{X: c.Max.X, Y: c.Max.Y},
+		{c.Min.X, c.Max.Y},
+		{c.Max.X, c.Max.Y},
 	}
 	outline := c.ClipLinesY(pts)
 	c.StrokeLines(t.LineStyle, outline...)
 
 	// Here we draw the lower border.
 	pts = []vg.Point{
-		{X: c.Min.X, Y: c.Min.Y},
-		{X: c.Max.X, Y: c.Min.Y},
+		{c.Min.X, c.Min.Y},
+		{c.Max.X, c.Min.Y},
 	}
 	outline = c.ClipLinesY(pts)
 	c.StrokeLines(t.LineStyle, outline...)

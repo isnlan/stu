@@ -296,8 +296,4 @@ func (t *Tpl) loadParamsFromFpdf(f *Fpdf) {
 	t.Fpdf.fontSizePt = f.fontSizePt
 	t.Fpdf.fontStyle = f.fontStyle
 	t.Fpdf.ws = f.ws
-
-	for key, value := range f.images {
-		t.Fpdf.images[key] = value
-	}
 }

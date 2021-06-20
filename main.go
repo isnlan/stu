@@ -1,30 +1,33 @@
 package main
 
 import (
-	"crypto/sha256"
-	"encoding/hex"
-	"fmt"
-	"sync/atomic"
+	"net/http"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promauto"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-type User struct {
-	name string
+func recordMetrics() {
+	go func() {
+		for {
+			opsProcessed.Inc()
+			time.Sleep(2 * time.Second)
+		}
+	}()
 }
 
-type C struct {
-	s atomic.Value
-}
-
-func MakeMongoIdFromString(str string) string {
-	bytes := sha256.Sum256([]byte(str))
-	var dst [12]byte
-	copy(dst[:], bytes[:])
-	return hex.EncodeToString(dst[:])
-}
+var (
+	opsProcessed = promauto.NewCounter(prometheus.CounterOpts{
+		Name: "myapp_processed_ops_total",
+		Help: "The total number of processed events",
+	})
+)
 
 func main() {
-	t := time.Now().Unix()
-	unix := time.Unix(t, 0)
-	fmt.Println(unix)
+	recordMetrics()
+
+	http.Handle("/metrics", promhttp.Handler())
+	http.ListenAndServe(":2112", nil)
 }

@@ -40,11 +40,6 @@ type Legend struct {
 	// final position.
 	XOffs, YOffs vg.Length
 
-	// YPosition specifies the vertical position of a legend entry.
-	// Valid values are [-1,+1], with +1 being the top of the
-	// entry vertical space, and -1 the bottom.
-	YPosition float64
-
 	// ThumbnailWidth is the width of legend thumbnails.
 	ThumbnailWidth vg.Length
 
@@ -82,12 +77,8 @@ func NewLegend() (Legend, error) {
 		return Legend{}, err
 	}
 	return Legend{
-		YPosition:      draw.PosBottom,
 		ThumbnailWidth: vg.Points(20),
-		TextStyle: draw.TextStyle{
-			Font:    font,
-			Handler: DefaultTextHandler,
-		},
+		TextStyle:      draw.TextStyle{Font: font},
 	}, nil
 }
 
@@ -95,18 +86,16 @@ func NewLegend() (Legend, error) {
 func (l *Legend) Draw(c draw.Canvas) {
 	iconx := c.Min.X
 	sty := l.TextStyle
-	em := sty.Rectangle(" ")
-	textx := iconx + l.ThumbnailWidth + em.Max.X
+	textx := iconx + l.ThumbnailWidth + sty.Rectangle(" ").Max.X
 	if !l.Left {
 		iconx = c.Max.X - l.ThumbnailWidth
-		textx = iconx - em.Max.X
+		textx = iconx - l.TextStyle.Rectangle(" ").Max.X
 		sty.XAlign--
 	}
 	textx += l.XOffs
 	iconx += l.XOffs
 
-	descent := sty.Font.Extents().Descent
-	enth := l.entryHeight() + descent
+	enth := l.entryHeight()
 	y := c.Max.Y - enth
 	if !l.Top {
 		y = c.Min.Y + (enth+l.Padding)*(vg.Length(len(l.entries))-1)
@@ -120,19 +109,11 @@ func (l *Legend) Draw(c draw.Canvas) {
 			Max: vg.Point{X: iconx + l.ThumbnailWidth, Y: y + enth},
 		},
 	}
-
-	if l.YPosition < draw.PosBottom || draw.PosTop < l.YPosition {
-		panic("plot: invalid vertical offset for the legend's entries")
-	}
-	yoff := vg.Length(l.YPosition-draw.PosBottom) / 2
-	yoff -= descent
-
 	for _, e := range l.entries {
 		for _, t := range e.thumbs {
 			t.Thumbnail(icon)
 		}
 		yoffs := (enth - sty.Rectangle(e.text).Max.Y) / 2
-		yoffs += yoff
 		c.FillText(sty, vg.Point{X: textx, Y: icon.Min.Y + yoffs}, e.text)
 		icon.Min.Y -= enth + l.Padding
 		icon.Max.Y -= enth + l.Padding
